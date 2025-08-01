@@ -39,7 +39,7 @@ ENV MODEL_NAME=$MODEL_NAME \
     HF_HOME="${BASE_PATH}/huggingface-cache/hub" \
     HF_HUB_ENABLE_HF_TRANSFER=0 \
     VLLM_USE_V1=1 \
-    GUIDED_DECODING_BACKEND="outlines"
+    GUIDED_DECODING_BACKEND=""
 
 ENV PYTHONPATH="/:/vllm-workspace"
 
