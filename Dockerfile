@@ -15,6 +15,10 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 RUN python3 -m pip install vllm==0.9.1 && \
     python3 -m pip install flashinfer -i https://flashinfer.ai/whl/cu121/torch2.3
 
+# Overwrite vLLM's ovis.py with patched version
+COPY src/transformers_utils/configs/ovis.py /usr/local/lib/python3.10/dist-packages/vllm/transformers_utils/configs/ovis.py
+
+
 # Setup for Option 2: Building the Image with the Model included
 ARG MODEL_NAME=""
 ARG TOKENIZER_NAME=""
