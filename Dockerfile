@@ -13,7 +13,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 # Install vLLM and FlashInfer
 RUN python3 -m pip install vllm==0.9.1 && \
-    python3 -m pip install flashinfer -i https://flashinfer.ai/whl/cu121/torch2.3
+    python3 -m pip install flashinfer -i https://flashinfer.ai/whl/cu121/torch2.3 && \
     python3 -m pip install transformers
 
 # Overwrite vLLM's ovis.py with patched version
