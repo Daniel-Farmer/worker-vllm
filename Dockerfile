@@ -53,7 +53,7 @@ RUN --mount=type=secret,id=HF_TOKEN,required=false \
     fi
 
 # Log engine mode on startup
-RUN echo "🔧 Starting vLLM with V1 engine: $VLLM_USE_V1 and decoding backend: $GUIDED_DECODING_BACKEND"
+RUN echo "🔧 Starting vLLM with V1 engine: 1 and decoding backend: ${GUIDED_DECODING_BACKEND:-None}"
 
 # Start handler
 CMD ["python3", "/src/handler.py"]
